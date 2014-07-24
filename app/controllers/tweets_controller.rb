@@ -15,6 +15,7 @@ class TweetsController < ApplicationController
   end
 
   def create
+    hashtags_names = params[:tweet].delete(:hashtags) || []
     tweet = Tweet.new(params[:tweet])
     tweet.content ||= Faker::Lorem.sentence
     tweet.username ||= Faker::Name.name
@@ -22,7 +23,6 @@ class TweetsController < ApplicationController
     tweet.avatar_url ||= Faker::Avatar.image(tweet.username)
     tweet.save
 
-    hashtags_names = params[:hashtags] || []
     hashtags_names.each do |name|
       tweet.hashtags << Hashtag.first_or_create(name: name)
     end

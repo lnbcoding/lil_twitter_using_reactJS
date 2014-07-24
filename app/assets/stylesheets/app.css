@@ -86,7 +86,7 @@ p {
 
 #tweet-box {
   position: absolute;
-  height: 160px;
+  height: 225px;
   width: 232px;
   max-width: 232px;
   text-align: center;
@@ -95,10 +95,14 @@ p {
   border-radius: 6px
 }
 
+#tweet-box input {
+  width: 90%;
+}
+
 #trends-container {
   position: absolute;
-  top: 180px;
-  height: 258px;
+  top: 280px;
+  height: 300px;
   width: 210px;
   max-width: 210px;
   border: 1px solid #000;
