@@ -1,19 +1,20 @@
 /** @jsx React.DOM */
 //= require hashtag.react
+//= require stores/hashtag-store
 //= require stores/tweet-store
 var Trends = React.createClass({
   getInitialState: function() {
     return {
-      hashtags: TweetStore.popularHastags()
+      hashtags: HashtagStore.hashtags()
     }
   },
   componentWillMount: function() {
-    $(TweetStore).on('hashtag-change', function() {
+    $(HashtagStore).on('change', function() {
       this.setState({
-        hashtags: TweetStore.popularHastags()
+        hashtags: HashtagStore.hashtags()
       })
     }.bind(this))
-    TweetStore.hashtags();
+    HashtagStore.popular();
   },
 
   render: function() {
