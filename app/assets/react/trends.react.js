@@ -3,23 +3,10 @@
 //= require stores/hashtag-store
 //= require stores/tweet-store
 var Trends = React.createClass({
-  getInitialState: function() {
-    return {
-      hashtags: HashtagStore.hashtags()
-    }
-  },
-  componentWillMount: function() {
-    $(HashtagStore).on('change', function() {
-      this.setState({
-        hashtags: HashtagStore.hashtags()
-      })
-    }.bind(this))
-    HashtagStore.popular();
-  },
-
   render: function() {
     var trends = [];
-    this.state.hashtags.forEach(function(tag) {
+    var data = ["sweet"]
+    data.forEach(function(tag) {
       trends.push(<Hashtag tag={tag} />)
     })
     return (

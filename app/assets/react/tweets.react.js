@@ -2,22 +2,16 @@
 //= require stores/tweet-store
 //= require tweet.react
 var Tweets = React.createClass({
-  getInitialState: function() {
-    return {
-      recent: TweetStore.tweets()
-    }
-  },
-  componentDidMount: function() {
-    $(TweetStore).on('change', function(e) {
-      this.setState({
-        recent: TweetStore.tweets()
-      })
-    }.bind(this))
-    TweetStore.recent();
-  },
   render: function() {
     var tweets = [];
-    this.state.recent.forEach(function(tweet){
+    var data = [{avatar_url: "http://robohash.org/abc",
+                content: "abc",
+                created_at: "2014-07-25T23:04:13Z",
+                handle: "eee",
+                hashtag_names: ["deleniti"],
+                updated_at: "2014-07-25T23:04:13Z",
+                username: "abc"}]
+    data.forEach(function(tweet){
       tweets.push(<Tweet tweet={tweet}/>)
     })
     return (
