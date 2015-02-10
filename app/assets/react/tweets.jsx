@@ -1,6 +1,6 @@
-/** @jsx React.DOM */
-//= require stores/tweet-store
-//= require tweet.react
+//= require react
+
+//= require components/tweet
 var Tweets = React.createClass({
   render: function() {
     var tweets = [];

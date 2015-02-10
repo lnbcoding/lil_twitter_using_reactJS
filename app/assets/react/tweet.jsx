@@ -1,4 +1,4 @@
-/** @jsx React.DOM */
+//= require react
 var Tweet = React.createClass({
   render: function() {
     var tweet = this.props.tweet;

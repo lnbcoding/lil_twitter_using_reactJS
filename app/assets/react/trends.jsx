@@ -1,7 +1,5 @@
-/** @jsx React.DOM */
-//= require hashtag.react
-//= require stores/hashtag-store
-//= require stores/tweet-store
+//= require react
+//= require components/hashtag
 var Trends = React.createClass({
   render: function() {
     var trends = [];
@@ -12,16 +10,11 @@ var Trends = React.createClass({
     return (
       <section id="trends-container">
         <h3>Trends</h3>
-        <a href="#all" onClick={this.allTweets}>All</a>
+        <a href="#all">All</a>
         <ul>
           {trends}
         </ul>
       </section>
     )
-  },
-
-  allTweets: function(e) {
-    e.preventDefault();
-    TweetStore.recent();
   }
 })

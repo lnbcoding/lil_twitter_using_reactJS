@@ -1,5 +1,4 @@
-/** @jsx React.DOM */
-//= require actions/tweet-actions
+//= require react
 var TweetBox = React.createClass({
   render: function() {
     return (

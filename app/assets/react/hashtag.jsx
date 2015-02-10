@@ -1,5 +1,4 @@
-/** @jsx React.DOM */
-//= require stores/tweet-store
+//= require react
 var Hashtag = React.createClass({
   render: function() {
     return (

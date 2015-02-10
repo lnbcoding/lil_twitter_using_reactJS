@@ -1,4 +1,4 @@
-/** @jsx React.DOM */
+//= require react
 var Header = React.createClass({
   render: function() {
     return (
