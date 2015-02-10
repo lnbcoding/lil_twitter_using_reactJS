@@ -4,8 +4,8 @@ var TweetBox = React.createClass({
     return (
       <section id="tweet-box">
         <p id="tweet-box-title">Compose New Tweet</p>
-        <form id="tweet-form" onSubmit={this.tweetThis}>
-          <textarea ref="content" id="new-tweet" cols="30" rows="5" maxlength="140" name="tweet" placeholder="Tweet Something"></textarea>
+        <form id="tweet-form">
+          <textarea ref="content" id="new-tweet" cols="30" rows="5" name="tweet" placeholder="Tweet Something"></textarea>
           <input ref="hashtags" placeholder="Hashtags (comma separated)"/>
           <input ref="handle" placeholder="Your Twitter handle"/>
           <input ref="username" placeholder="Your Twitter username"/>
@@ -14,15 +14,5 @@ var TweetBox = React.createClass({
         </form>
       </section>
     )
-  },
-
-  tweetThis: function(e) {
-    e.preventDefault();
-    var data = {};
-    Object.keys(this.refs).forEach(function(ref) {
-      var value = this.refs[ref].getDOMNode().value;
-      if(value) data[ref] = value;
-    }.bind(this))
-    TweetActions.tweet(data)
   }
 })
