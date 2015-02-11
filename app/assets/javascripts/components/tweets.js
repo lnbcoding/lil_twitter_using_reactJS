@@ -12,10 +12,9 @@ var Tweets = React.createClass({displayName: "Tweets",
 
   // 2nd: set a property of state with a named tweets------------------
 
-  // call server and update the state
-  // componentDidMount is a built-in React method
+  // Using a TweetStore object to hold the tweets
+  // When there is an event change, call the the TweetStore.recent method, which makes the  Ajax request
   componentDidMount: function() {
-    // TweetStore.recent(function(response) {
     TweetStore.onChangeEvent(function(event, response) {
       this.setState({
         tweets: response
@@ -23,6 +22,9 @@ var Tweets = React.createClass({displayName: "Tweets",
     }.bind(this))
     TweetStore.recent()
   },
+
+  // call server and update the state
+  // componentDidMount is a built-in React method
 
   // componentDidMount: function() {
   //   $.ajax({

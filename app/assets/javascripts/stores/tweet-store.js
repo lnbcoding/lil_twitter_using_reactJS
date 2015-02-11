@@ -4,8 +4,10 @@ var TweetStore = {
         $.ajax({
         url: '/tweets/recent',
         type: 'GET'
-    }).done(function(serverResponse) {
-    // setting a State name tweets. setState is a built-in React method
+        }).done(function(serverResponse) {
+        // setting a State name tweets. setState is a built-in React method
+
+        // calling the triggerChange method defined below
         this.triggerChange(serverResponse);
         }.bind(this))
     },
