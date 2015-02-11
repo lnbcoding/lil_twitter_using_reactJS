@@ -1,5 +1,6 @@
 //= require react
 //= require components/tweet
+//= require stores/tweet-store
 
 var Tweets = React.createClass({displayName: "Tweets",
   // 1st: initialize the tweets array----------------------------------
@@ -40,6 +41,7 @@ var Tweets = React.createClass({displayName: "Tweets",
     // var tweets = data.map(function(tweet){
 
     var tweets = this.state.tweets.map(function(tweet){
+      // the capital Tweet is the component file for tweet.jsx, which renders just one tweet
       return(React.createElement(Tweet, {key: tweet.id, tweet: tweet}));
     })
     return tweets;
