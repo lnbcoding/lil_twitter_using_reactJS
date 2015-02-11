@@ -15,16 +15,26 @@ var Tweets = React.createClass({displayName: "Tweets",
   // call server and update the state
   // componentDidMount is a built-in React method
   componentDidMount: function() {
-    $.ajax({
-      url: '/tweets/recent',
-      type: 'GET'
-    }).done(function(serverResponse) {
-  // setting a State name tweets. setState is a built-in React method
+    // TweetStore.recent(function(response) {
+    TweetStore.onChangeEvent(function(event, response) {
       this.setState({
-        tweets: serverResponse
+        tweets: response
       })
     }.bind(this))
+    TweetStore.recent()
   },
+
+  // componentDidMount: function() {
+  //   $.ajax({
+  //     url: '/tweets/recent',
+  //     type: 'GET'
+  //   }).done(function(serverResponse) {
+  // // setting a State name tweets. setState is a built-in React method
+  //     this.setState({
+  //       tweets: serverResponse
+  //     })
+  //   }.bind(this))
+  // },
 
   // 4th: accept the ajax response and convert to proper format for rendering
   renderTweets: function() {
