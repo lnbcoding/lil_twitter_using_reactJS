@@ -6,7 +6,8 @@ var Tweets = React.createClass({
   // 1st: initialize the tweets array----------------------------------
   getInitialState: function() {
     return {
-      tweets: []
+      // only the TweetStore had knowledge of the tweets array
+      tweets: TweetStore.tweets
     };
   },
 
@@ -17,7 +18,7 @@ var Tweets = React.createClass({
   componentDidMount: function() {
     TweetStore.onChangeEvent(function(event, response) {
       this.setState({
-        tweets: response
+        tweets: TweetStore.tweets
       })
     }.bind(this))
     TweetStore.recent()
@@ -38,7 +39,7 @@ var Tweets = React.createClass({
   //   }.bind(this))
   // },
 
-  // 4th: accept the ajax response and convert to proper format for rendering
+  // 3rd: accept the ajax response and convert to proper format for rendering
   renderTweets: function() {
     // var data = [{id: 1,
     //             avatar_url: "http://robohash.org/abc",
@@ -59,7 +60,7 @@ var Tweets = React.createClass({
     return tweets;
   },
 
-  // 3rd: render to the <Tweets /> in twitter.jsx
+  // 4th: render to the <Tweets /> in twitter.jsx
 
   render: function() {
     return (

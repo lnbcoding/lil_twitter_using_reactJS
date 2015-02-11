@@ -1,4 +1,6 @@
 //= require react
+
+
 var TweetBox = React.createClass({
   render: function() {
     return (
@@ -16,3 +18,4 @@ var TweetBox = React.createClass({
     )
   }
 })
+
