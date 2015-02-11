@@ -13,7 +13,7 @@ var Trends = React.createClass({displayName: "Trends",
     )
   },
   renderTrends: function() {
-    var data = ["sweet"]
+    var data = ["sweet", "dirk man", "ignore me"]
     var trends = data.map(function(tag, i) {
       return(React.createElement(Hashtag, {key: i, tag: tag}))
     })
