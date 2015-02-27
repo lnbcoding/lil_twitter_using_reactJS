@@ -1,7 +1,5 @@
 ## Lil' Twitter
 
-Part of Dev Bootcamp's thick client challenge for the 2014 Chorus Frogs.
-
 ## Learning Competencies
 
 - Build a client side heavy Rails application.
