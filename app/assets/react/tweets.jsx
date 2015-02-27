@@ -16,7 +16,7 @@ var Tweets = React.createClass({
   // Using a TweetStore object to hold the tweets
   // When there is an event change, call the the TweetStore.recent method, which makes the  Ajax request
   componentDidMount: function() {
-    TweetStore.onChangeEvent(function(event, response) {
+    TweetStore.onChangeEvent(function( _, response ) {
       this.setState({
         tweets: TweetStore.tweets
       })
